@@ -1,6 +1,5 @@
 //Get from local storage
-
-export const getNomunationsFromLocalStorage = () => {
+export const getNominationsFromLocalStorage = () => {
   let previouslyNominatedMovies = new Map()
 
   const locallyStoredNominatedMovies = { ...localStorage }

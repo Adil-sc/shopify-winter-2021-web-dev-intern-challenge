@@ -7,7 +7,8 @@ import useAxiosGet from '../Hooks/Httprequests'
 import { getMovies } from '../Services/omdbApi'
 import { NominationContext } from '../Context/NominationContext'
 import Banner from '../Components/Banner'
-import { getNomunationsFromLocalStorage } from '../Utils/localStorage'
+import { getNominationsFromLocalStorage } from '../Utils/localStorage'
+require('dotenv').config()
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState({
@@ -18,8 +19,10 @@ const Home = () => {
   const [nominations, setNominations] = useState(new Map())
 
   useEffect(() => {
-    setNominations(getNomunationsFromLocalStorage())
+    setNominations(getNominationsFromLocalStorage())
   }, [])
+
+  console.log(process.env)
 
   //Get the name of the movie the user has typed into the search bar
   const handleSearchText = (input) => {
