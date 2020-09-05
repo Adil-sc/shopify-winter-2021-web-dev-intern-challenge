@@ -17,6 +17,10 @@ const Home = () => {
 
   const [nominations, setNominations] = useState(new Map())
 
+  useEffect(() => {
+    setNominations(getNomunationsFromLocalStorage())
+  }, [])
+
   //Get the name of the movie the user has typed into the search bar
   const handleSearchText = (input) => {
     console.log(input)
