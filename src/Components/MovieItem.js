@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { NominationContext } from '../Context/NominationContext'
+import { addNominationToLocalStorage } from '../Utils/localStorage'
 
 const MovieItem = (props) => {
   const { nominations, setNominations } = useContext(NominationContext)
@@ -16,6 +17,7 @@ const MovieItem = (props) => {
 
   const updateNominations = (k, v) => {
     setNominations(new Map(nominations.set(k, v)))
+    addNominationToLocalStorage(k, JSON.stringify(v))
     setIsButtonDisabled(true)
   }
 

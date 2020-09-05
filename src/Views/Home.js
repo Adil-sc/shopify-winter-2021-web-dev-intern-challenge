@@ -6,6 +6,8 @@ import NominationsCard from '../Components/NominationsCard'
 import useAxiosGet from '../Hooks/Httprequests'
 import { getMovies } from '../Services/omdbApi'
 import { NominationContext } from '../Context/NominationContext'
+import Banner from '../Components/Banner'
+import { getNomunationsFromLocalStorage } from '../Utils/localStorage'
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState({
@@ -43,6 +45,9 @@ const Home = () => {
   return (
     <div>
       <h1>The Shoppies</h1>
+      {nominations.size >= 5 && (
+        <Banner numberOfNominations={nominations.size} />
+      )}
       <NominationContext.Provider value={{ nominations, setNominations }}>
         <SearchBar onSearchChange={handleSearchText} />
         <ResultsCard searchQuery={searchQuery} />
