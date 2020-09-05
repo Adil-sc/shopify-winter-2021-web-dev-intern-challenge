@@ -1,22 +1,16 @@
 //Get from local storage
 
 export const getNomunationsFromLocalStorage = () => {
-  let movieMap = new Map()
+  let previouslyNominatedMovies = new Map()
 
-  const items = { ...localStorage }
+  const locallyStoredNominatedMovies = { ...localStorage }
 
   //   console.log(Object.keys(items))
-  Object.keys(items).forEach((item) => {
-    movieMap.set(item, JSON.parse(localStorage[item]))
+  Object.keys(locallyStoredNominatedMovies).forEach((imdbID) => {
+    previouslyNominatedMovies.set(imdbID, JSON.parse(localStorage[imdbID]))
   })
 
-  return movieMap
-  // let keys = Object.keys(localStorage)
-  // i = keys.length
-
-  // while(i--){
-
-  // }
+  return previouslyNominatedMovies
 }
 
 //Set local storage
@@ -25,3 +19,6 @@ export const addNominationToLocalStorage = (k, v) => {
 }
 
 //Remove local stroage
+export const removeNominationFromLocalStorage = (imdbID) => {
+  localStorage.removeItem(imdbID)
+}
