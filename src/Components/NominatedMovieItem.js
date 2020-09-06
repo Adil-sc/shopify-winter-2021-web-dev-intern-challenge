@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { NominationContext } from '../Context/NominationContext'
 import { removeNominationFromLocalStorage } from '../Utils/localStorage'
 
-const NominatedMovieItem = (props) => {
+export const NominatedMovieItem = (props) => {
   const { nominations, setNominations } = useContext(NominationContext)
 
   //remove nomination from hashmap

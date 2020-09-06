@@ -58,7 +58,7 @@ const Home = () => {
         <div className="">
           <SearchBar onSearchChange={handleSearchText} />
         </div>
-        <div className="min-h-full lg:grid grid-cols-2 gap-10">
+        <div className="min-h-full lg:grid grid-cols-2 gap-6">
           <div className="">
             <ResultsCard searchQuery={searchQuery} />
           </div>

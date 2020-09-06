@@ -1,7 +1,7 @@
 import React from 'react'
 import MovieItem from './MovieItem'
 
-const ResultsCard = (props) => {
+export const ResultsCard = (props) => {
   const renderResultsList = () => {
     return props.searchQuery.movies.map((movie) => (
       <div key={movie.imdbID}>
@@ -20,14 +20,14 @@ const ResultsCard = (props) => {
     )
   }
 
-  console.log(props.searchQuery.movies)
+  // console.log(props.searchQuery.movies)
 
   return (
     <div className="h-auto w-full bg-white shadow rounded-md p-8 mt-6">
       <h2 className="text-lg font-bold">{`Results for "${
         props.searchQuery.searchText ? props.searchQuery.searchText : '...'
       }"`}</h2>
-      <div className="">
+      <div id="displayResults" className="">
         {props.searchQuery.movies ? renderResultsList() : renderEmptyState()}
       </div>
       <div>

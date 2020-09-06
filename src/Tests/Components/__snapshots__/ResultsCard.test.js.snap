@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ResultsCard /> should render empty ResultsCard correctly 1`] = `
+<div
+  className="h-auto w-full bg-white shadow rounded-md p-8 mt-6"
+>
+  <h2
+    className="text-lg font-bold"
+  >
+    Results for "..."
+  </h2>
+  <div
+    className=""
+    id="displayResults"
+  >
+    <div>
+      <p
+        className=" text-gray-500"
+      >
+        Start searching to find a movie to nominate
+      </p>
+    </div>
+  </div>
+  <div />
+</div>
+`;

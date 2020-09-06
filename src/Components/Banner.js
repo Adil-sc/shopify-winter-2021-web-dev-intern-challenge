@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Confetti from 'react-confetti'
-import { useTransition, animated } from 'react-spring'
 
-const Banner = (props) => {
+export const Banner = (props) => {
   const [confettiIsFalling, setConfettiIsFalling] = useState(true)
 
   setTimeout(() => {

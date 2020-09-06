@@ -6,7 +6,7 @@ import {
   nominateButtonDisabled,
 } from '../Constants/cssConstants'
 
-const MovieItem = (props) => {
+export const MovieItem = (props) => {
   const { nominations, setNominations } = useContext(NominationContext)
   const [isButtonDisabled, setIsButtonDisabled] = useState(false)
 

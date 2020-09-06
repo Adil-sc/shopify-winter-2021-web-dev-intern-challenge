@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NominationsCard /> should render empty NominationsCard correctly 1`] = `
+<div
+  className="h-auto full bg-white shadow rounded-md p-8 mt-6"
+>
+  <div
+    className="flex justify-between"
+  >
+    <h2
+      className="text-lg font-bold"
+    >
+      Nominations
+    </h2>
+  </div>
+  <div
+    id="displayNominations"
+  >
+    <div>
+      <p
+        className=" text-gray-500"
+      >
+        Your nominated movies appear here
+      </p>
+    </div>
+  </div>
+</div>
+`;

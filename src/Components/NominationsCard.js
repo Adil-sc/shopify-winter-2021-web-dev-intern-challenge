@@ -3,7 +3,7 @@ import NominatedMovieItem from './NominatedMovieItem'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 
-const NominationsCard = (props) => {
+export const NominationsCard = (props) => {
   const nominations = props.nominations
   const renderNominationsList = () => {
     return [...nominations.keys()].map((nomination) => {
@@ -37,7 +37,9 @@ const NominationsCard = (props) => {
         <h2 className="text-lg font-bold">Nominations</h2>
         {nominations.size > 0 ? savedToDeviceIndicator() : null}
       </div>
-      {nominations.size ? renderNominationsList() : renderEmptyState()}
+      <div id="displayNominations">
+        {nominations.size ? renderNominationsList() : renderEmptyState()}
+      </div>
     </div>
   )
 }
