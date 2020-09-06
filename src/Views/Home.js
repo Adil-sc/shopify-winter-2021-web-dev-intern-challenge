@@ -20,15 +20,6 @@ const Home = () => {
     setNominations(getNominationsFromLocalStorage())
   }, [])
 
-  //Get the name of the movie the user has typed into the search bar
-  const handleSearchText = (input) => {
-    console.log(input)
-    setSearchQuery({
-      searchText: input,
-      movies: null,
-    })
-  }
-
   useEffect(() => {
     //Implement debounce so that we wait 1 second after the last input, so we don't make uncecessary api calls on each keystroke
     const timer = setTimeout(() => {
@@ -44,6 +35,15 @@ const Home = () => {
     //perform cleanup and cancel setTimeOut if 1 second has not passed before user types more
     return () => clearTimeout(timer)
   }, [searchQuery.searchText])
+
+  //Get the name of the movie the user has typed into the search bar
+  const handleSearchText = (input) => {
+    console.log(input)
+    setSearchQuery({
+      searchText: input,
+      movies: null,
+    })
+  }
 
   return (
     <div className="">
