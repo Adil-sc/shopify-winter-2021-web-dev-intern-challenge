@@ -12,6 +12,8 @@
     "autoprefixer": "^9.8.6",
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
     "postcss-cli": "^7.1.2",
     "react": "^16.13.1",
     "react-confetti": "^6.0.0",

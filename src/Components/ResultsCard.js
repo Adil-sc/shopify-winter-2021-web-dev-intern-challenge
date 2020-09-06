@@ -14,7 +14,7 @@ const ResultsCard = (props) => {
     return (
       <div>
         <p className=" text-gray-500">
-          Start searching to find your favorite movie
+          Start searching to find a movie to nominate
         </p>
       </div>
     )

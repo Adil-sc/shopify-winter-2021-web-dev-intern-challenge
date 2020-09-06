@@ -46,23 +46,23 @@ const Home = () => {
   }
 
   return (
-    <div className="">
-      <div className="ml-64 mr-64 pb-4">
+    <div className="grid">
+      <div className="pb-4">
         {nominations.size >= 5 && (
           <Banner numberOfNominations={nominations.size} />
         )}
       </div>
-      <h1 className="text-3xl font-bold mb-4 mt-8 ml-64">The Shoppies</h1>
+      <h1 className="text-3xl font-bold mb-4 mt-8 ">The Shoppies</h1>
 
       <NominationContext.Provider value={{ nominations, setNominations }}>
-        <div className="ml-64 mr-64">
+        <div className="">
           <SearchBar onSearchChange={handleSearchText} />
         </div>
-        <div className="flex justify-between ml-64 mr-64 min-h-full">
-          <div className="w-1/2 mr-2">
+        <div className="min-h-full lg:grid grid-cols-2 gap-10">
+          <div className="">
             <ResultsCard searchQuery={searchQuery} />
           </div>
-          <div className="w-1/2 ml-2">
+          <div className="">
             <NominationsCard nominations={nominations} />
           </div>
         </div>
