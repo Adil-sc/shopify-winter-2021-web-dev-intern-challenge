@@ -6,7 +6,6 @@ import { getMovies } from '../Services/omdbApi'
 import { NominationContext } from '../Context/NominationContext'
 import Banner from '../Components/Banner'
 import { getNominationsFromLocalStorage } from '../Utils/localStorage'
-require('dotenv').config()
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState({
