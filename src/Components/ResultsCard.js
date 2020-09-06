@@ -10,14 +10,31 @@ const ResultsCard = (props) => {
     ))
   }
 
+  const renderEmptyState = () => {
+    return (
+      <div>
+        <p className=" text-gray-500">
+          Start searching to find your favorite movie
+        </p>
+      </div>
+    )
+  }
+
   console.log(props.searchQuery.movies)
 
   return (
-    <div>
-      <h2>{`Results for "${
+    <div className="h-auto w-full bg-white shadow rounded-md p-8 mt-6">
+      <h2 className="text-lg font-bold">{`Results for "${
         props.searchQuery.searchText ? props.searchQuery.searchText : '...'
       }"`}</h2>
-      {props.searchQuery.movies && renderResultsList()}
+      <div className="">
+        {props.searchQuery.movies ? renderResultsList() : renderEmptyState()}
+      </div>
+      <div>
+        {props.searchQuery.movies == null &&
+          props.searchQuery.searchText &&
+          'No movies found'}
+      </div>
     </div>
   )
 }

@@ -1,11 +1,9 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
 import Home from './Views/Home'
 
 function App() {
   return (
-    <div className="App">
+    <div className="bg-gray-200 h-screen pr-16 pl-16 pb-16">
       <Home />
     </div>
   )

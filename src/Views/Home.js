@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Search from '../Components/SearchBar'
 import SearchBar from '../Components/SearchBar'
 import ResultsCard from '../Components/ResultsCard'
 import NominationsCard from '../Components/NominationsCard'
-import useAxiosGet from '../Hooks/Httprequests'
 import { getMovies } from '../Services/omdbApi'
 import { NominationContext } from '../Context/NominationContext'
 import Banner from '../Components/Banner'
@@ -21,8 +19,6 @@ const Home = () => {
   useEffect(() => {
     setNominations(getNominationsFromLocalStorage())
   }, [])
-
-  console.log(process.env)
 
   //Get the name of the movie the user has typed into the search bar
   const handleSearchText = (input) => {
@@ -50,15 +46,26 @@ const Home = () => {
   }, [searchQuery.searchText])
 
   return (
-    <div>
-      <h1>The Shoppies</h1>
-      {nominations.size >= 5 && (
-        <Banner numberOfNominations={nominations.size} />
-      )}
+    <div className="">
+      <div className="ml-64 mr-64 pb-4">
+        {nominations.size >= 5 && (
+          <Banner numberOfNominations={nominations.size} />
+        )}
+      </div>
+      <h1 className="text-3xl font-bold mb-4 mt-8 ml-64">The Shoppies</h1>
+
       <NominationContext.Provider value={{ nominations, setNominations }}>
-        <SearchBar onSearchChange={handleSearchText} />
-        <ResultsCard searchQuery={searchQuery} />
-        <NominationsCard nominations={nominations} />
+        <div className="ml-64 mr-64">
+          <SearchBar onSearchChange={handleSearchText} />
+        </div>
+        <div className="flex justify-between ml-64 mr-64 min-h-full">
+          <div className="w-1/2 mr-2">
+            <ResultsCard searchQuery={searchQuery} />
+          </div>
+          <div className="w-1/2 ml-2">
+            <NominationsCard nominations={nominations} />
+          </div>
+        </div>
       </NominationContext.Provider>
     </div>
   )

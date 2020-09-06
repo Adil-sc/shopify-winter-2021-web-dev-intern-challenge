@@ -4,7 +4,6 @@ export const getNominationsFromLocalStorage = () => {
 
   const locallyStoredNominatedMovies = { ...localStorage }
 
-  //   console.log(Object.keys(items))
   Object.keys(locallyStoredNominatedMovies).forEach((imdbID) => {
     previouslyNominatedMovies.set(imdbID, JSON.parse(localStorage[imdbID]))
   })
