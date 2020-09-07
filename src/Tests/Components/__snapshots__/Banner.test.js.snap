@@ -10,7 +10,7 @@ exports[`<Banner /> should render Banner correctly 1`] = `
     <p
       className="text-lg font-bold p-2"
     >
-      🎉 Congratulations! You've completed adding 5 nominations! 🎉
+      🎉 Congratulations! You've nominated at least 5 movies! 🎉
     </p>
     <ForwardRef
       numberOfPieces={200}

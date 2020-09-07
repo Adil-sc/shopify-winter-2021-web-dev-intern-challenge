@@ -1,5 +1,7 @@
 import React from 'react'
 import MovieItem from './MovieItem'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 
 export const ResultsCard = (props) => {
   const renderResultsList = () => {
@@ -20,21 +22,39 @@ export const ResultsCard = (props) => {
     )
   }
 
-  // console.log(props.searchQuery.movies)
+  const renderAnimation = () => {
+    return (
+      <div className="animate-ping h-5 w-5">
+        <span className="pl-2 ">
+          <FontAwesomeIcon icon={faEllipsisH} />
+        </span>
+      </div>
+    )
+  }
+
+  const noResultsFound = () => {
+    return (
+      <div className="text-gray-700 ">
+        {props.searchQuery.searchText &&
+        props.searchQuery.movies == null &&
+        !props.handleLoading.isLoading
+          ? 'No movies found. Please try another search'
+          : null}
+      </div>
+    )
+  }
 
   return (
     <div className="h-auto w-full bg-white shadow rounded-md p-8 mt-6">
       <h2 className="text-lg font-bold">{`Results for "${
         props.searchQuery.searchText ? props.searchQuery.searchText : '...'
       }"`}</h2>
+
       <div id="displayResults" className="">
         {props.searchQuery.movies ? renderResultsList() : renderEmptyState()}
+        {props.handleLoading.isLoading ? renderAnimation() : null}
       </div>
-      <div>
-        {props.searchQuery.movies == null &&
-          props.searchQuery.searchText &&
-          'No movies found'}
-      </div>
+      {noResultsFound()}
     </div>
   )
 }

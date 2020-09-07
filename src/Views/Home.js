@@ -15,6 +15,8 @@ const Home = () => {
 
   const [nominations, setNominations] = useState(new Map())
 
+  const [isLoading, setIsLoading] = useState(false)
+
   useEffect(() => {
     setNominations(getNominationsFromLocalStorage())
   }, [])
@@ -24,12 +26,15 @@ const Home = () => {
     const timer = setTimeout(() => {
       console.log(getMovies(searchQuery.searchText))
       getMovies(searchQuery.searchText).then((res) => {
+        setIsLoading(false)
         setSearchQuery({
           ...searchQuery,
           movies: res,
         })
       })
     }, 1000)
+
+    setIsLoading(true)
 
     //perform cleanup and cancel setTimeOut if 1 second has not passed before user types more
     return () => clearTimeout(timer)
@@ -59,7 +64,10 @@ const Home = () => {
         </div>
         <div className="min-h-full lg:grid grid-cols-2 gap-6">
           <div className="">
-            <ResultsCard searchQuery={searchQuery} />
+            <ResultsCard
+              searchQuery={searchQuery}
+              handleLoading={{ isLoading, setIsLoading }}
+            />
           </div>
           <div className="">
             <NominationsCard nominations={nominations} />

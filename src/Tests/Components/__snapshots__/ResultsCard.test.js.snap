@@ -21,6 +21,8 @@ exports[`<ResultsCard /> should render empty ResultsCard correctly 1`] = `
       </p>
     </div>
   </div>
-  <div />
+  <div
+    className="text-gray-700 "
+  />
 </div>
 `;

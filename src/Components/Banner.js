@@ -12,7 +12,7 @@ export const Banner = (props) => {
     <div className="">
       <div className="h-14 bg-green-300 shadow rounded-md text-center">
         <p className="text-lg font-bold p-2">
-          {`🎉 Congratulations! You've completed adding ${props.numberOfNominations} nominations! 🎉`}
+          {`🎉 Congratulations! You've nominated at least 5 movies! 🎉`}
         </p>
 
         {confettiIsFalling && <Confetti numberOfPieces={200} />}
