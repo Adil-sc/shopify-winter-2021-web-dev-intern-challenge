@@ -22,7 +22,6 @@ const Home = () => {
   useEffect(() => {
     //Implement debounce so that we wait 1 second after the last input, so we don't make uncecessary api calls on each keystroke
     const timer = setTimeout(() => {
-      console.log(getMovies(searchQuery.searchText))
       getMovies(searchQuery.searchText).then((res) => {
         setIsLoading(false)
         setSearchQuery({
@@ -40,7 +39,6 @@ const Home = () => {
 
   //Get the name of the movie the user has typed into the search bar
   const handleSearchText = (input) => {
-    console.log(input)
     setSearchQuery({
       searchText: input,
       movies: null,
