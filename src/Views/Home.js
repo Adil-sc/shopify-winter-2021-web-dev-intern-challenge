@@ -12,9 +12,7 @@ const Home = () => {
     searchText: '',
     movies: null,
   })
-
   const [nominations, setNominations] = useState(new Map())
-
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
@@ -57,19 +55,19 @@ const Home = () => {
         )}
       </div>
       <h1 className="text-3xl font-bold mb-4 mt-8 ">The Shoppies</h1>
-
       <NominationContext.Provider value={{ nominations, setNominations }}>
-        <div className="">
+        <div>
           <SearchBar onSearchChange={handleSearchText} />
         </div>
+
         <div className="min-h-full lg:grid grid-cols-2 gap-6">
-          <div className="">
+          <div>
             <ResultsCard
               searchQuery={searchQuery}
               handleLoading={{ isLoading, setIsLoading }}
             />
           </div>
-          <div className="">
+          <div>
             <NominationsCard nominations={nominations} />
           </div>
         </div>

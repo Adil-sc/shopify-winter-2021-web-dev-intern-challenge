@@ -1,4 +1,3 @@
-//Get from local storage
 export const getNominationsFromLocalStorage = () => {
   let previouslyNominatedMovies = new Map()
 
@@ -11,12 +10,10 @@ export const getNominationsFromLocalStorage = () => {
   return previouslyNominatedMovies
 }
 
-//Set local storage
 export const addNominationToLocalStorage = (k, v) => {
   localStorage.setItem(k, v)
 }
 
-//Remove local stroage
 export const removeNominationFromLocalStorage = (imdbID) => {
   localStorage.removeItem(imdbID)
 }

@@ -37,6 +37,7 @@ export const NominationsCard = (props) => {
         <h2 className="text-lg font-bold">Nominations</h2>
         {nominations.size > 0 ? savedToDeviceIndicator() : null}
       </div>
+
       <div id="displayNominations">
         {nominations.size ? renderNominationsList() : renderEmptyState()}
       </div>

@@ -14,7 +14,6 @@ export const Banner = (props) => {
         <p className="text-lg font-bold p-2">
           {`🎉 Congratulations! You've nominated at least 5 movies! 🎉`}
         </p>
-
         {confettiIsFalling && <Confetti numberOfPieces={200} />}
       </div>
     </div>

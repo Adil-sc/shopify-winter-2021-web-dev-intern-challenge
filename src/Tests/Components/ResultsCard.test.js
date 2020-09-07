@@ -16,6 +16,7 @@ describe('<ResultsCard />', () => {
     const wrapper = shallow(
       <ResultsCard searchQuery={searchQuery} handleLoading={false} />
     )
+
     expect(wrapper.find('#displayResults').text()).toEqual('<MovieItem />')
   })
 })

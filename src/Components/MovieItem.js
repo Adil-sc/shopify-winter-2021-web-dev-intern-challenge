@@ -8,22 +8,22 @@ import {
 
 export const MovieItem = (props) => {
   const { nominations, setNominations } = useContext(NominationContext)
-  const [isButtonDisabled, setIsButtonDisabled] = useState(false)
+  const [isNominateButtonDisabled, setIsNominateButtonDisabled] = useState(
+    false
+  )
 
-  //Disable/enable Nominate button based on if the moive has been nominated
   useEffect(() => {
     if (nominations.get(props.movie.imdbID)) {
-      setIsButtonDisabled(true)
+      setIsNominateButtonDisabled(true)
     } else {
-      setIsButtonDisabled(false)
+      setIsNominateButtonDisabled(false)
     }
   }, [nominations, props.movie.imdbID])
 
-  //Add movie to nominations hashmap
-  const updateNominations = (k, v) => {
+  const addToNominations = (k, v) => {
     setNominations(new Map(nominations.set(k, v)))
     addNominationToLocalStorage(k, JSON.stringify(v))
-    setIsButtonDisabled(true)
+    setIsNominateButtonDisabled(true)
   }
 
   return (
@@ -37,11 +37,13 @@ export const MovieItem = (props) => {
       <div>
         <button
           className={
-            isButtonDisabled ? nominateButtonDisabled : nominateButtonEnabled
+            isNominateButtonDisabled
+              ? nominateButtonDisabled
+              : nominateButtonEnabled
           }
-          disabled={isButtonDisabled}
+          disabled={isNominateButtonDisabled}
           onClick={() => {
-            updateNominations(props.movie.imdbID, props.movie)
+            addToNominations(props.movie.imdbID, props.movie)
           }}
         >
           Nominate
