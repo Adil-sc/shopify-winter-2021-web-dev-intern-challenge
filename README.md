@@ -17,6 +17,14 @@
 - TailwindCSS
 ```
 
+### `Extras Implemented`
+
+```
+- Save nomination lists if the user leaves the page
+- Animation for loading movie results, confetti drop when 5 movies are nominated
+- Improved design
+```
+
 ##
 
 ## `Challenge Instructions`
