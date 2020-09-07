@@ -22,7 +22,7 @@ export const NominationsCard = (props) => {
 
   const savedToDeviceIndicator = () => {
     return (
-      <p className="text-xs text-gray-500">
+      <p className="text-xs text-gray-500 ml-4 sm:ml-0">
         <span>
           <FontAwesomeIcon icon={faCheck} />{' '}
         </span>
