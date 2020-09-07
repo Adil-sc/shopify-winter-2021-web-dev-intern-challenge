@@ -34,7 +34,7 @@ export const NominationsCard = (props) => {
   return (
     <div className="h-auto full bg-white shadow rounded-md p-8 mt-6">
       <div className="flex justify-between">
-        <h2 className="text-lg font-bold">Nominations</h2>
+        <h2 className="text-2xl font-bold mb-2">Nominations</h2>
         {nominations.size > 0 ? savedToDeviceIndicator() : null}
       </div>
 

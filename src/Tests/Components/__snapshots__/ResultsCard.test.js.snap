@@ -2,10 +2,10 @@
 
 exports[`<ResultsCard /> should render empty ResultsCard correctly 1`] = `
 <div
-  className="h-auto w-full bg-white shadow rounded-md p-8 mt-6"
+  className="h-auto w-full bg-white shadow rounded-md p-8 mt-6 grid col-span-1 sm:mb-4"
 >
   <h2
-    className="text-lg font-bold"
+    className="text-2xl font-bold mb-2"
   >
     Results for "..."
   </h2>

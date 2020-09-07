@@ -27,27 +27,46 @@ export const MovieItem = (props) => {
   }
 
   return (
-    <div className="pl-8 pt-2 flex justify-between">
-      <div>
-        <li>
-          {props.movie.Title} ({props.movie.Year})
-        </li>
-      </div>
-
-      <div>
-        <button
-          className={
-            isNominateButtonDisabled
-              ? nominateButtonDisabled
-              : nominateButtonEnabled
-          }
-          disabled={isNominateButtonDisabled}
-          onClick={() => {
-            addToNominations(props.movie.imdbID, props.movie)
+    <div className="pt-2 flex justify-center">
+      <div className="max-w-sm w-full lg:max-w-full lg:flex shadow-lg mb-2 sm:mb-4">
+        <div
+          className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden object-cover"
+          style={{
+            //Can add alt background via second url param: , url(https://image.flaticon.com/icons/svg/49/49238.svg)
+            backgroundImage: `url(${props.movie.Poster})`,
+            backgroundColor: '#9ae6b4',
           }}
-        >
-          Nominate
-        </button>
+        ></div>
+
+        <div className="pl-4 w-full  bg-white rounded-b lg:rounded-b-none lg:rounded-r  flex flex-col justify-between leading-normal">
+          <div className="mb-4">
+            <div
+              id="movieTitle"
+              className="text-gray-900 font-bold text-xl mb-2"
+            >
+              {props.movie.Title}
+            </div>
+            <p className="text-xs text-gray-500 mb-4">
+              Release Date: {props.movie.Year}
+            </p>
+
+            <div className="flex justify-end mr-4">
+              <button
+                className={
+                  isNominateButtonDisabled
+                    ? nominateButtonDisabled
+                    : nominateButtonEnabled
+                }
+                disabled={isNominateButtonDisabled}
+                onClick={() => {
+                  addToNominations(props.movie.imdbID, props.movie)
+                }}
+              >
+                Nominate
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

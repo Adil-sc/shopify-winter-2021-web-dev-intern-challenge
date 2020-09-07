@@ -1,4 +1,4 @@
 export const nominateButtonEnabled =
-  'ml-4 bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-full'
+  'ml-4 bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-full focus:outline-none'
 export const nominateButtonDisabled =
   'ml-4 bg-blue-500 hover:bg-blue-700 text-white font-bold  px-4 rounded-full opacity-50 cursor-not-allowed'

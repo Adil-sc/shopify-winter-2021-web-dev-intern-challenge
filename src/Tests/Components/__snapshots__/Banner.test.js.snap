@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Banner /> should render Banner correctly 1`] = `
-<div
-  className=""
->
+<div>
   <div
     className="h-14 bg-green-300 shadow rounded-md text-center"
   >

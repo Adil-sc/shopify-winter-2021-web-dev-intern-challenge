@@ -12,6 +12,6 @@ describe('<MovieItem />', () => {
       </NominationContext.Provider>
     )
 
-    expect(wrapper.find('li').text()).toBe('Batman Begins (2005)')
+    expect(wrapper.find('#movieTitle').text()).toBe(movie.Title)
   })
 })

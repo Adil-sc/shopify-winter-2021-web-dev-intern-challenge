@@ -8,7 +8,7 @@ exports[`<NominationsCard /> should render empty NominationsCard correctly 1`] =
     className="flex justify-between"
   >
     <h2
-      className="text-lg font-bold"
+      className="text-2xl font-bold mb-2"
     >
       Nominations
     </h2>
