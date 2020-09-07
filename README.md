@@ -8,6 +8,8 @@
 1. yarn install
 2. yarn start
 3. Optional: yarn test
+
+Please note you will need to obtain your own OMDB API key and save it in a .env file. Assign it to the key: REACT_APP_API_KEY
 ```
 
 ### `Built With`
