@@ -33,11 +33,10 @@ const Home = () => {
 
     setIsLoading(true)
 
-    //perform cleanup and cancel setTimeOut if 1 second has not passed before user types more
+    //Perform cleanup and cancel setTimeOut if 1 second has not passed before user types more
     return () => clearTimeout(timer)
   }, [searchQuery.searchText])
 
-  //Get the name of the movie the user has typed into the search bar
   const handleSearchText = (input) => {
     setSearchQuery({
       searchText: input,
