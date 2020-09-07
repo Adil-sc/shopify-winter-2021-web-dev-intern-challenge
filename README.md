@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Shopify Winter 2021 Web Development Intern Challenge
 
-![alt text](https://i.imgur.com/f0zLoDF.gif)
+![alt text](https://i.imgur.com/E1WTN8h.gif)
 
 ### `Build Instructions`
 
