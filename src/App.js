@@ -5,7 +5,7 @@ function App() {
   return (
     <div
       className="bg-gray-200 min-h-screen  \
-     sm:pl-0 sm:pr-0 md:pl-8 md:pr-8 lg:pr-64 lg:pl-64 pb-16"
+     pl-4 pr-4 md:pl-16 md:pr-16 lg:pr-64 lg:pl-64 pb-16"
     >
       <Home />
     </div>
