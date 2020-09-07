@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Shopify Winter 2021 Web Development Intern Challenge
 
 ![alt text](https://i.imgur.com/E1WTN8h.gif)
