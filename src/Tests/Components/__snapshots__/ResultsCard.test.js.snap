@@ -7,7 +7,7 @@ exports[`<ResultsCard /> should render empty ResultsCard correctly 1`] = `
   <h2
     className="text-2xl font-bold mb-2"
   >
-    Results for "..."
+    Results 
   </h2>
   <div
     className=""
