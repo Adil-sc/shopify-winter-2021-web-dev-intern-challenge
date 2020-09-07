@@ -46,9 +46,11 @@ export const ResultsCard = (props) => {
 
   return (
     <div className="h-auto w-full bg-white shadow rounded-md p-8 mt-6 grid col-span-1 sm:mb-4">
-      <h2 className="text-2xl font-bold mb-2">{`Results for "${
-        props.searchQuery.searchText ? props.searchQuery.searchText : '...'
-      }"`}</h2>
+      <h2 className="text-2xl font-bold mb-2">{`Results ${
+        props.searchQuery.searchText
+          ? `for  "${props.searchQuery.searchText}"`
+          : ''
+      }`}</h2>
 
       <div id="displayResults" className="">
         {props.searchQuery.movies ? renderResultsList() : renderEmptyState()}
